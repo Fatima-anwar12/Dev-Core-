@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-secondary-fixed-variant": "#6b00b0",
+                        "on-surface-variant": "#bbc9cf",
+                        "outline": "#859399",
+                        "on-tertiary-fixed": "#3b002f",
+                        "secondary-fixed": "#f1daff",
+                        "primary": "#a4e6ff",
+                        "inverse-surface": "#e5e2e1",
+                        "surface-container-low": "#1c1b1b",
+                        "tertiary": "#ffceea",
+                        "surface-dim": "#131313",
+                        "error": "#ffb4ab",
+                        "surface-container-lowest": "#0e0e0e",
+                        "secondary": "#dfb7ff",
+                        "surface-tint": "#4cd6ff",
+                        "on-primary": "#003543",
+                        "primary-fixed-dim": "#4cd6ff",
+                        "inverse-on-surface": "#313030",
+                        "surface-container-highest": "#353534",
+                        "on-primary-fixed-variant": "#004e60",
+                        "on-surface": "#e5e2e1",
+                        "tertiary-fixed-dim": "#ffade1",
+                        "on-error": "#690005",
+                        "surface-variant": "#353534",
+                        "on-tertiary-container": "#94007a",
+                        "primary-fixed": "#b7eaff",
+                        "error-container": "#93000a",
+                        "on-primary-fixed": "#001f28",
+                        "on-error-container": "#ffdad6",
+                        "on-secondary-container": "#f7e6ff",
+                        "on-tertiary": "#5f004e",
+                        "secondary-container": "#9d05ff",
+                        "on-primary-container": "#00566a",
+                        "surface-container-high": "#2a2a2a",
+                        "inverse-primary": "#00677f",
+                        "on-background": "#e5e2e1",
+                        "primary-container": "#00d1ff",
+                        "secondary-fixed-dim": "#dfb7ff",
+                        "tertiary-fixed": "#ffd8ed",
+                        "surface": "#131313",
+                        "surface-container": "#201f1f",
+                        "on-secondary-fixed": "#2d004f",
+                        "surface-bright": "#3a3939",
+                        "tertiary-container": "#ffa3df",
+                        "outline-variant": "#3c494e",
+                        "on-secondary": "#4b007e",
+                        "background": "#131313",
+                        "on-tertiary-fixed-variant": "#86006f"
+                    },
+                    fontFamily: {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Inter"],
+                        "label": ["Space Grotesk"]
+                    },
+                    borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; background-color: #131313; color: #e5e2e1; }
+        .font-headline { font-family: 'Space Grotesk', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .glass-panel { backdrop-filter: blur(16px); background: rgba(19, 19, 19, 0.6); }
+        .glow-subtle { box-shadow: 0 0 40px rgba(0, 209, 255, 0.05); }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #131313; }
+        ::-webkit-scrollbar-thumb { background: #2a2a2a; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #353534; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopAppBar -->
+<nav class="fixed top-0 w-full z-50 bg-[#131313]/60 backdrop-blur-lg">
+<div class="flex justify-between items-center px-6 py-4 max-w-7xl mx-auto">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[#00D1FF]" data-icon="terminal">terminal</span>
+<span class="text-2xl font-['Space_Grotesk'] font-bold tracking-tighter text-[#00D1FF]">DevCore</span>
+</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-[#00D1FF] font-medium font-['Space_Grotesk'] hover:text-[#00D1FF] transition-colors duration-300" href="#hero">Hero</a>
+<a class="text-[#e5e2e1]/70 font-['Space_Grotesk'] hover:text-[#00D1FF] transition-colors duration-300" href="#journey">Journey</a>
+<a class="text-[#e5e2e1]/70 font-['Space_Grotesk'] hover:text-[#00D1FF] transition-colors duration-300" href="#skills">Skills</a>
+<a class="text-[#e5e2e1]/70 font-['Space_Grotesk'] hover:text-[#00D1FF] transition-colors duration-300" href="#projects">Projects</a>
+</div>
+<button class="md:hidden text-[#e5e2e1]/70">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+</div>
+</nav>
+<main>
+<!-- Hero Section -->
+<section class="relative min-h-screen flex flex-col justify-center px-6 pt-20 overflow-hidden" id="hero">
+<!-- Decorative Orbs -->
+<div class="absolute top-[-10%] right-[-5%] w-[500px] h-[500px] rounded-full bg-gradient-to-br from-primary/20 to-secondary-container/20 blur-[100px] pointer-events-none"></div>
+<div class="absolute bottom-[10%] left-[-5%] w-[300px] h-[300px] rounded-full bg-gradient-to-tr from-secondary/10 to-primary/10 blur-[80px] pointer-events-none"></div>
+<div class="max-w-7xl mx-auto w-full grid md:grid-cols-12 gap-12 items-center relative z-10">
+<div class="md:col-span-8">
+<h1 class="font-headline text-7xl md:text-9xl font-bold tracking-tighter text-on-surface leading-none mb-6">
+                        DevCore
+                    </h1>
+<p class="font-headline text-2xl md:text-3xl text-primary font-light tracking-tight mb-8 max-w-2xl">
+                        Building and learning modern digital experiences.
+                    </p>
+<div class="flex flex-col md:flex-row gap-8 items-start">
+<p class="font-body text-lg text-on-surface-variant leading-relaxed max-w-lg">
+                            An aspiring developer charting a course through the digital ether. Currently focused on mastering the core pillars of the web while exploring the infinite possibilities of kinetic design.
+                        </p>
+<div class="flex flex-col gap-4">
+<button class="bg-primary-container text-on-primary-container px-8 py-3 rounded-md font-headline font-bold flex items-center gap-2 hover:scale-[1.02] transition-transform">
+                                View Projects
+                                <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</button>
+<button class="border border-outline-variant/30 text-primary px-8 py-3 rounded-md font-headline font-bold hover:bg-primary/5 transition-colors">
+                                Download CV
+                            </button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Journey Section -->
+<section class="py-32 px-6 bg-surface-container-low relative" id="journey">
+<div class="max-w-7xl mx-auto">
+<div class="mb-20">
+<span class="font-headline text-xs tracking-[0.2em] text-secondary uppercase font-bold mb-4 block">Process</span>
+<h2 class="font-headline text-5xl font-bold tracking-tight text-on-surface">Digital Journey</h2>
+</div>
+<div class="grid md:grid-cols-2 gap-16 items-start">
+<div class="space-y-12">
+<div class="relative pl-12">
+<div class="absolute left-0 top-0 w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center border border-primary/20">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+</div>
+<h3 class="font-headline text-xl font-bold text-on-surface mb-2">Phase 01: Foundations</h3>
+<p class="text-on-surface-variant leading-relaxed">Diving deep into semantic HTML5, CSS3 architecture, and the logic of JavaScript. Understanding how the web breathes.</p>
+</div>
+<div class="relative pl-12">
+<div class="absolute left-0 top-0 w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center border border-secondary/20">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+</div>
+<h3 class="font-headline text-xl font-bold text-on-surface mb-2">Phase 02: Responsive Realities</h3>
+<p class="text-on-surface-variant leading-relaxed">Translating static designs into fluid experiences using modern CSS frameworks and mobile-first methodologies.</p>
+</div>
+<div class="relative pl-12">
+<div class="absolute left-0 top-0 w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center border border-tertiary/20">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+</div>
+<h3 class="font-headline text-xl font-bold text-on-surface mb-2">Phase 03: App Intelligence</h3>
+<p class="text-on-surface-variant leading-relaxed">Exploring basic state management and component-driven development for interactive web applications.</p>
+</div>
+</div>
+<div class="bg-surface-container rounded-xl p-8 border border-outline-variant/10 glow-subtle">
+<h4 class="font-headline text-lg font-bold mb-6">Learning Momentum</h4>
+<div class="space-y-8">
+<div>
+<div class="flex justify-between text-sm font-label mb-2">
+<span>WEB FUNDAMENTALS</span>
+<span class="text-primary">90%</span>
+</div>
+<div class="h-1 w-full bg-surface-container-lowest rounded-full overflow-hidden">
+<div class="h-full bg-gradient-to-r from-secondary to-primary rounded-full" style="width: 90%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between text-sm font-label mb-2">
+<span>JAVASCRIPT CORE</span>
+<span class="text-primary">65%</span>
+</div>
+<div class="h-1 w-full bg-surface-container-lowest rounded-full overflow-hidden">
+<div class="h-full bg-gradient-to-r from-secondary to-primary rounded-full" style="width: 65%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between text-sm font-label mb-2">
+<span>MOBILE UI DESIGN</span>
+<span class="text-primary">40%</span>
+</div>
+<div class="h-1 w-full bg-surface-container-lowest rounded-full overflow-hidden">
+<div class="h-full bg-gradient-to-r from-secondary to-primary rounded-full" style="width: 40%"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Skills Section -->
+<section class="py-32 px-6 bg-surface" id="skills">
+<div class="max-w-7xl mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
+<div class="max-w-xl">
+<span class="font-headline text-xs tracking-[0.2em] text-tertiary uppercase font-bold mb-4 block">Toolkit</span>
+<h2 class="font-headline text-5xl font-bold tracking-tight text-on-surface">Core Competencies</h2>
+</div>
+<p class="text-on-surface-variant max-w-sm">A curated selection of technologies I'm actively using to build the next generation of digital interfaces.</p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+<div class="bg-surface-container-low p-8 rounded-xl hover:bg-surface-container-high transition-colors group">
+<span class="material-symbols-outlined text-4xl text-primary mb-6 block group-hover:scale-110 transition-transform" data-icon="html">html</span>
+<h3 class="font-headline text-lg font-bold mb-2">HTML5</h3>
+<p class="text-sm text-on-surface-variant">Structuring semantic and accessible content foundations.</p>
+</div>
+<div class="bg-surface-container-low p-8 rounded-xl hover:bg-surface-container-high transition-colors group">
+<span class="material-symbols-outlined text-4xl text-secondary mb-6 block group-hover:scale-110 transition-transform" data-icon="css">css</span>
+<h3 class="font-headline text-lg font-bold mb-2">CSS3</h3>
+<p class="text-sm text-on-surface-variant">Mastering Flexbox, Grid, and complex modern layouts.</p>
+</div>
+<div class="bg-surface-container-low p-8 rounded-xl hover:bg-surface-container-high transition-colors group">
+<span class="material-symbols-outlined text-4xl text-tertiary mb-6 block group-hover:scale-110 transition-transform" data-icon="javascript">javascript</span>
+<h3 class="font-headline text-lg font-bold mb-2">JavaScript</h3>
+<p class="text-sm text-on-surface-variant">Functional logic and DOM manipulation for interactivity.</p>
+</div>
+<div class="bg-surface-container-low p-8 rounded-xl hover:bg-surface-container-high transition-colors group">
+<span class="material-symbols-outlined text-4xl text-primary-container mb-6 block group-hover:scale-110 transition-transform" data-icon="smartphone">smartphone</span>
+<h3 class="font-headline text-lg font-bold mb-2">Mobile Dev</h3>
+<p class="text-sm text-on-surface-variant">Learning Flutter/React Native for cross-platform apps.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Projects Section -->
+<section class="py-32 px-6 bg-surface-container-low" id="projects">
+<div class="max-w-7xl mx-auto">
+<div class="mb-20 text-center">
+<span class="font-headline text-xs tracking-[0.2em] text-primary uppercase font-bold mb-4 block">Portfolio</span>
+<h2 class="font-headline text-5xl font-bold tracking-tight text-on-surface">Recent Works</h2>
+</div>
+<div class="grid md:grid-cols-3 gap-8">
+<!-- Project 1 -->
+<div class="bg-surface-container-high rounded-xl overflow-hidden group">
+<div class="h-64 overflow-hidden">
+<img alt="Personal Portfolio Project" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Modern web portfolio layout with dark interface elements and neon blue accent lighting on a sleek workstation" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC2O2li5FXX1jSb3oBss3Fgl_cjgwU3L2sFWQbE-eyDUoY_JjyvdJcde1Wwg7fnOXGGTvyXIff28BCXvvW0O4jAAZijeYezYKz3dZ9_W8h0bP2Vky2SbV120-HhikhaXTNUDSu5fCovPR-X4MYfTJYhuqnuVjAbkB1BdYtTEa3526PpFfY2rWdjqM4aneSkiHLWLhZw1mI27AGHF-haJ6RVI1k52Qdx6SWZPrLBZK5Klux09A35k9Kot3698XylgbdD_osBbHuL8So"/>
+</div>
+<div class="p-8">
+<div class="flex gap-2 mb-4">
+<span class="px-3 py-1 bg-surface-variant rounded-full text-[10px] font-label text-on-surface-variant">WEB DESIGN</span>
+<span class="px-3 py-1 bg-surface-variant rounded-full text-[10px] font-label text-on-surface-variant">HTML/CSS</span>
+</div>
+<h3 class="font-headline text-xl font-bold mb-3">Portfolio V1</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed mb-6">A clean, minimalist personal site focused on typography and smooth content transitions.</p>
+<a class="text-primary font-headline font-bold text-sm inline-flex items-center gap-2 group/link" href="#">
+                                View Case Study
+                                <span class="material-symbols-outlined text-sm group-hover/link:translate-x-1 transition-transform" data-icon="north_east">north_east</span>
+</a>
+</div>
+</div>
+<!-- Project 2 -->
+<div class="bg-surface-container-high rounded-xl overflow-hidden group">
+<div class="h-64 overflow-hidden">
+<img alt="Landing Page Project" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Digital dashboard landing page mockup with vibrant purple gradients and glassmorphism cards on a dark background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMDOOp0eRvzw5kl0TslazxxvrY7-V7DpHvlg1a9oIwdyywvJSgBPCOoo0JI4_QEQZNS9ewJ7TMAmk0sB0a0NCe-lbngIlgFSSJiL4-BW5qWx68YNkFSLOD1-GDc7ilPkWYaXioPZy1ZQV9eDPGz9h_N3vEDwW0twZqSD_R9g-dwrlVpzh_nmFYAXxmqDcS-JW8wiV_goGwnN5xMSoUxeRmNa3dFCTm2Gqw8-iL9n1IKtRqHIq_kCpnump8G7grUuCsUmh2juhbCuw"/>
+</div>
+<div class="p-8">
+<div class="flex gap-2 mb-4">
+<span class="px-3 py-1 bg-surface-variant rounded-full text-[10px] font-label text-on-surface-variant">MARKETING</span>
+<span class="px-3 py-1 bg-surface-variant rounded-full text-[10px] font-label text-on-surface-variant">JS</span>
+</div>
+<h3 class="font-headline text-xl font-bold mb-3">SaaS Landing Page</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed mb-6">High-conversion layout featuring interactive components and responsive grid system.</p>
+<a class="text-primary font-headline font-bold text-sm inline-flex items-center gap-2 group/link" href="#">
+                                View Case Study
+                                <span class="material-symbols-outlined text-sm group-hover/link:translate-x-1 transition-transform" data-icon="north_east">north_east</span>
+</a>
+</div>
+</div>
+<!-- Project 3 -->
+<div class="bg-surface-container-high rounded-xl overflow-hidden group">
+<div class="h-64 overflow-hidden">
+<img alt="Mobile App UI Project" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Close-up of a high-tech mobile application UI design with glowing buttons and data visualization charts" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-hL8uFJ3elNhTzzit9BlUleVczxpyvE29O9kPElE5nVUDsr29e-2xwYD2cA8ohWRFmo5-yYVyInuS9aIC4r-AO6y-L51uimJ-BBhkoPXh5HXySys_TLnuI7jwbGNIbatsnwLaElg9OokVJrX9q02phIX0ORQUOeHS0an5pD8CFBZ6AwzHz20QgPCDP7h1q6GuCUi4Qwwn0fL_IqAYiY_z7kiGp-rm7rUIGNMOLmeKN1W51JavVvaLzeczKMsbYlzy9W7S2Gtq8nc"/>
+</div>
+<div class="p-8">
+<div class="flex gap-2 mb-4">
+<span class="px-3 py-1 bg-surface-variant rounded-full text-[10px] font-label text-on-surface-variant">MOBILE UI</span>
+<span class="px-3 py-1 bg-surface-variant rounded-full text-[10px] font-label text-on-surface-variant">FIGMA</span>
+</div>
+<h3 class="font-headline text-xl font-bold mb-3">Task Manager UI</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed mb-6">A mobile-first application interface designed for high-productivity environments.</p>
+<a class="text-primary font-headline font-bold text-sm inline-flex items-center gap-2 group/link" href="#">
+                                View Case Study
+                                <span class="material-symbols-outlined text-sm group-hover/link:translate-x-1 transition-transform" data-icon="north_east">north_east</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Contact Section -->
+<section class="py-40 px-6 bg-surface relative overflow-hidden" id="contact">
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-4xl aspect-square bg-primary/5 blur-[120px] rounded-full pointer-events-none"></div>
+<div class="max-w-4xl mx-auto text-center relative z-10">
+<h2 class="font-headline text-6xl md:text-8xl font-bold tracking-tighter text-on-surface mb-8">
+                    Let's connect and grow together.
+                </h2>
+<p class="font-body text-xl text-on-surface-variant mb-12 max-w-2xl mx-auto">
+                    Currently open to collaborations, junior opportunities, or just a chat about code and design.
+                </p>
+<a class="inline-block bg-[#00D1FF] text-[#003543] px-12 py-5 rounded-md font-headline font-bold text-xl hover:scale-105 transition-transform shadow-[0_0_30px_rgba(0,209,255,0.3)]" href="mailto:hello@devcore.com">
+                    Get In Touch
+                </a>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full pt-20 pb-10 bg-[#1c1b1b]">
+<div class="flex flex-col md:flex-row justify-between items-center px-8 max-w-7xl mx-auto gap-8">
+<div class="flex flex-col items-center md:items-start gap-4">
+<div class="text-lg font-bold text-[#00D1FF] font-headline">DevCore</div>
+<p class="font-['Inter'] text-sm text-[#e5e2e1]/60">© 2024 DevCore | Digital Astral</p>
+</div>
+<div class="flex gap-12">
+<a class="font-['Inter'] text-sm text-[#e5e2e1]/40 hover:text-[#00D1FF] underline-offset-4 transition-colors" href="#">GitHub</a>
+<a class="font-['Inter'] text-sm text-[#e5e2e1]/40 hover:text-[#00D1FF] underline-offset-4 transition-colors" href="#">LinkedIn</a>
+<a class="font-['Inter'] text-sm text-[#e5e2e1]/40 hover:text-[#00D1FF] underline-offset-4 transition-colors" href="#">Twitter</a>
+</div>
+</div>
+</footer>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center px-4 py-3 md:hidden bg-[#131313]/80 backdrop-blur-xl rounded-t-xl z-50 shadow-[0_-10px_40px_rgba(0,209,255,0.05)]">
+<a class="flex flex-col items-center justify-center text-[#00D1FF] bg-[#2a2a2a] rounded-xl px-3 py-1" href="#hero">
+<span class="material-symbols-outlined" data-icon="rocket_launch">rocket_launch</span>
+<span class="font-['Space_Grotesk'] text-[10px] uppercase tracking-widest mt-1">Hero</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#e5e2e1]/50 hover:bg-[#353534] transition-all" href="#journey">
+<span class="material-symbols-outlined" data-icon="auto_awesome">auto_awesome</span>
+<span class="font-['Space_Grotesk'] text-[10px] uppercase tracking-widest mt-1">Journey</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#e5e2e1]/50 hover:bg-[#353534] transition-all" href="#skills">
+<span class="material-symbols-outlined" data-icon="architecture">architecture</span>
+<span class="font-['Space_Grotesk'] text-[10px] uppercase tracking-widest mt-1">Skills</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#e5e2e1]/50 hover:bg-[#353534] transition-all" href="#projects">
+<span class="material-symbols-outlined" data-icon="layers">layers</span>
+<span class="font-['Space_Grotesk'] text-[10px] uppercase tracking-widest mt-1">Projects</span>
+</a>
+</nav>
+</body></html>
